@@ -1,0 +1,26 @@
+{
+  "name": "viddychat",
+  "version": "1.0.0",
+  "description": "Due to the pandemic, most of the social and work life moved online, that sparked a revolution in video sharing services like zoom, google meet and a host of others. Viddychat is video chat app like zoom and google. It uses WebRTC API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichdamola/viddychat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ichdamola/viddychat/issues"
+  },
+  "homepage": "https://github.com/ichdamola/viddychat#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.1.2"
+  }
+}
