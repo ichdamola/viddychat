@@ -17,6 +17,23 @@ app.get('/', function (req, res) {
     res.send('Server is running...');
   });
 
+  io.on("connection", function(socket){
+      socket.emit("me", socket.id);
+
+      socket.on("disconnect", function(){
+          socket.broadcast.emit("callended");
+      });
+
+      socket.on("calluser", function ({ userToCall, signalData, from, name }){
+          io.to(userToCall).emit("calluser", { signal: signalData, from, name});
+      });
+
+      socket.on("answercall", function(data){
+          io.to(data.to).emit("callaccepted", data.signal);
+      })
+  });
+
+
   server.listen(PORT, function (){
       console.log(`Server listening on PORT ${PORT}`);
   })
